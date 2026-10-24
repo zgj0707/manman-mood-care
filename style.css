@@ -29,3 +29,11 @@ body{background:radial-gradient(ellipse at 83% 8%,#e8f1e8 0,transparent 27rem),#
 /* Make the local AI reflection visible from the first screen. */
 .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.hero-ai-link{display:inline-flex;align-items:center;gap:9px;padding:7px 12px 7px 9px;border:1px solid #bfd5c6;border-radius:13px;background:#f4faf5d9;color:#365b4f;text-align:left;font:inherit;font-size:12px;font-weight:650;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}.hero-ai-link:hover{background:#fffefa;border-color:#93baa0;transform:translateY(-2px)}.hero-ai-symbol{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#d7ecdf;color:#3d7059;font-size:18px}.hero-ai-link small{display:block;margin-top:1px;color:#6b8375;font-size:11px;font-weight:500}.hero-ai-arrow{margin-left:4px;color:#668778;font-size:16px}.ai-review-card{scroll-margin-top:22px;position:relative;overflow:hidden;background:linear-gradient(115deg,#f0f7f0 0%,#fffefa 60%);border-color:#dce9df}.ai-review-card:after{content:"✧";position:absolute;right:28px;top:16px;color:#b6d2bf;font-size:46px;pointer-events:none}.ai-review-card .section-title-row,.ai-review-card .section-intro,.ai-review-card .review-toolbar,.ai-review-card .review-output,.ai-review-card .review-feedback,.ai-review-card .review-footnote{position:relative;z-index:1}.ai-review-card .section-title-row h2{max-width:620px}.ai-review-card .review-output{background:#fffefa}.ai-review-card .review-footnote{font-size:11px;color:#66786e}
 @media(max-width:760px){.hero-actions{position:relative;z-index:2;gap:8px}.hero-ai-link{padding:6px 9px 6px 7px;gap:7px;background:#f5faf5ed}.hero-ai-symbol{width:25px;height:25px}.hero-ai-link small{font-size:10px}.hero-ai-arrow{margin-left:0}.ai-review-card:after{right:12px;top:6px;font-size:36px}}
+
+/* A quiet, rounded scrollbar that belongs to the sage-and-cream palette. */
+html{scrollbar-color:#b8cbbd transparent;scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#b8cbbd;background-clip:padding-box;border:3px solid transparent;border-radius:999px}
+::-webkit-scrollbar-thumb:hover{background:#789786;background-clip:padding-box}
+::-webkit-scrollbar-corner{background:transparent}
