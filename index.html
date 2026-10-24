@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <meta name="description" content="把感受写下来，给自己一点温柔的空间。情绪日记与自我关怀练习。" />
+  <title>慢慢 · 情绪日记与自我关怀</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="慢慢首页">
+        <span class="brand-mark"><span></span><span></span></span>
+        <span>慢慢<small>情绪照料室</small></span>
+      </a>
+      <div class="side-label">陪伴空间</div>
+      <nav class="side-nav" aria-label="主导航">
+        <button class="nav-link active" data-view="home"><span class="nav-icon">◷</span>今日心情</button>
+        <button class="nav-link" data-view="diary"><span class="nav-icon">▤</span>情绪日记</button>
+        <button class="nav-link" data-view="insight"><span class="nav-icon">⌁</span>情绪线索</button>
+        <button class="nav-link" data-view="care"><span class="nav-icon">✳</span>自我关怀</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-card"><span class="lock">♧</span><div><b>只属于你的空间</b><p>记录保存在此设备中</p></div></div>
+        <div class="side-footer">温柔一点，已经很好了。</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark"><span></span><span></span></span><b>慢慢</b></div>
+        <div class="date-line" id="today-date"></div>
+        <button class="top-action" id="privacy-button" aria-label="隐私说明">♧ <span>隐私说明</span></button>
+      </header>
+      <section class="view active" id="view-home">
+        <div class="welcome-row">
+          <div><p class="eyebrow">A LITTLE SPACE FOR YOU</p><h1>你好，<span>今天的你</span></h1><p class="subheading">不必急着变好，先听听自己此刻的声音。</p></div>
+          <div class="sun-art" aria-hidden="true"><i></i><span></span></div>
+        </div>
+        <div class="home-grid">
+          <section class="card checkin-card">
+            <div class="card-heading"><div><span class="step-label">01 / 此刻</span><h2>现在的心情，像什么天气？</h2></div><span class="tiny-spark">✳</span></div>
+            <div class="mood-options" role="group" aria-label="选择此刻心情">
+              <button class="mood-option" data-mood="平静"><span>🌿</span><small>平静</small></button>
+              <button class="mood-option" data-mood="开心"><span>☀️</span><small>开心</small></button>
+              <button class="mood-option" data-mood="疲惫"><span>☁️</span><small>疲惫</small></button>
+              <button class="mood-option" data-mood="焦虑"><span>🌫️</span><small>焦虑</small></button>
+              <button class="mood-option" data-mood="低落"><span>🌧️</span><small>低落</small></button>
+              <button class="mood-option" data-mood="烦躁"><span>🌬️</span><small>烦躁</small></button>
+            </div>
+            <div class="soft-divider"></div>
+            <div class="step-label">02 / 找找线索 <span class="optional">可多选 · 也可以跳过</span></div>
+            <div class="trigger-options" role="group" aria-label="可能的情绪触发因素">
+              <button class="chip" data-trigger="学习 / 工作">学习 / 工作</button><button class="chip" data-trigger="关系相处">关系相处</button><button class="chip" data-trigger="睡眠不足">睡眠不足</button><button class="chip" data-trigger="对自己的期待">对自己的期待</button><button class="chip" data-trigger="说不清的原因">说不清的原因</button>
+            </div>
+            <label class="step-label note-label" for="entry-note">03 / 写给自己 <span class="optional">写一句也可以</span></label>
+            <textarea id="entry-note" maxlength="500" placeholder="此刻发生了什么？身体有什么感觉？你希望自己听见什么……"></textarea>
+            <div class="form-foot"><span id="char-count">0 / 500</span><button class="primary-button" id="save-entry">记下这一刻 <span>↗</span></button></div>
+            <p class="save-message" id="save-message" aria-live="polite"></p>
+          </section>
+
+          <div class="right-rail">
+            <section class="card gentle-card">
+              <div class="card-heading"><span class="step-label">给此刻的你</span><span class="tiny-spark">✳</span></div>
+              <h2 id="gentle-title">先不用解决所有事。</h2>
+              <p id="gentle-copy">感受一下双脚碰到地面的感觉。你正在这里，已经是一个开始。</p>
+              <button class="text-button" data-go="care">试试一个小练习 <span>→</span></button>
+              <div class="leaf-decoration" aria-hidden="true">✿</div>
+            </section>
+            <section class="card week-card">
+              <div class="card-heading"><div><span class="step-label">温柔观察</span><h2>这一周的心情</h2></div><button class="icon-button" data-go="insight" aria-label="查看情绪线索">↗</button></div>
+              <div class="mood-week" id="mood-week"></div>
+              <div class="week-caption"><span class="legend-dot"></span> 每天只记录一次，也很棒</div>
+            </section>
+            <div class="note-card"><span>☼</span><p>情绪没有对错，<br/>它只是在告诉你：<em>有些事值得被照顾。</em></p></div>
+          </div>
+        </div>
+        <div class="bottom-note">慢慢来，也算在前进。 <span>✳</span></div>
+      </section>
+
+      <section class="view" id="view-diary">
+        <div class="page-heading"><p class="eyebrow">YOUR MOMENTS</p><h1>情绪日记</h1><p>不需要写得完整，真实就很好。</p><button class="primary-button" data-go="home">记录此刻 <span>↗</span></button></div>
+        <div class="diary-list" id="diary-list"></div>
+      </section>
+
+      <section class="view" id="view-insight">
+        <div class="page-heading"><p class="eyebrow">NOTICE, WITHOUT JUDGING</p><h1>情绪线索</h1><p>这些只是观察，不是结论。你比任何图表都更了解自己。</p></div>
+        <div class="insight-grid"><section class="card insight-card"><span class="step-label">近 7 天</span><h2>情绪天气</h2><div id="insight-chart" class="insight-chart"></div><p class="quiet-hint">情绪起伏很自然，不需要追求每天都开心。</p></section><section class="card insight-card"><span class="step-label">常出现的线索</span><h2>最近，什么比较占心？</h2><div id="trigger-summary" class="trigger-summary"></div><p class="quiet-hint">触发因素不是你的错。看见它，是照顾自己的第一步。</p></section></div>
+        <div class="reflection-card"><span>✳</span><div><b>一个温柔的问题</b><p>如果朋友正经历和你一样的事，你会对 TA 说些什么？</p></div></div>
+      </section>
+
+      <section class="view" id="view-care">
+        <div class="page-heading"><p class="eyebrow">SMALL THINGS THAT HELP</p><h1>自我关怀</h1><p>挑一个现在做得到的小动作。照顾自己，不需要等到“有空”。</p></div>
+        <div class="care-grid">
+          <article class="care-card breath-card"><div class="care-icon">◉</div><span class="step-label">01 / 60 秒</span><h2>跟着呼吸，回到此刻</h2><p>慢慢吸气，再缓缓呼出。不需要刻意改变，只是陪着这一口气。</p><button class="outline-button" id="breath-start">开始一分钟 <span>→</span></button><div class="breath-visual" id="breath-visual"><span></span></div><div class="breath-caption" id="breath-caption"></div></article>
+          <article class="care-card move-card"><div class="care-icon">⌁</div><span class="step-label">02 / 轻轻活动</span><h2>给身体一点空间</h2><p>选一个简单动作，做两分钟就好。可以随时停下来。</p><div class="activity-list"><button class="activity" data-activity="散步两分钟"><span>🚶</span><span><b>慢慢走一走</b><small>看看窗外，松松肩膀</small></span><span>＋</span></button><button class="activity" data-activity="伸展肩颈"><span>🌱</span><span><b>伸展肩颈</b><small>轻轻转动，不必做到极限</small></span><span>＋</span></button><button class="activity" data-activity="喝一杯水"><span>💧</span><span><b>喝一杯水</b><small>感受温度，给自己一点停顿</small></span><span>＋</span></button></div></article>
+          <article class="care-card sound-card"><div class="care-icon">♫</div><span class="step-label">03 / 安静片刻</span><h2>给耳朵一点留白</h2><p>闭上眼睛，听听身边的声音：风扇、鸟鸣，或者自己的呼吸。</p><button class="outline-button" id="sound-start">开始 30 秒聆听 <span>→</span></button><div class="sound-feedback" id="sound-feedback"></div></article>
+        </div>
+        <div class="care-footer"><span>☼</span><p>今天做不到也没关系。你不需要靠“表现好”来证明自己值得被照顾。</p></div>
+      </section>
+
+      <footer class="disclaimer">慢慢是一个自我关怀练习工具，不提供诊断或治疗建议。若困扰持续影响生活，可考虑联系可信赖的人或专业支持。</footer>
+    </main>
+    <nav class="mobile-nav" aria-label="移动端导航"><button class="active" data-view="home"><span>◷</span>今日</button><button data-view="diary"><span>▤</span>日记</button><button data-view="insight"><span>⌁</span>线索</button><button data-view="care"><span>✳</span>关怀</button></nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="privacy-dialog"><button class="dialog-close" aria-label="关闭">×</button><div class="dialog-mark">♧</div><p class="eyebrow">YOUR PRIVACY, YOUR CHOICE</p><h2>你的心事，留在你的设备</h2><p>这个雏形将日记保存在当前浏览器的本地存储中，不会上传到服务器。清除浏览器数据或更换设备后，记录可能无法恢复。请避免在共享设备上记录敏感信息。</p><button class="primary-button dialog-ok">知道了</button></dialog>
+  <script src="./app.js"></script>
+</body>
+</html>
