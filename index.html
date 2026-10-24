@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f7f5f0" />
   <meta name="description" content="把感受写下来，给自己一点温柔的空间。情绪日记与自我关怀练习。" />
   <title>慢慢 · 情绪日记与自我关怀</title>
-  <link rel="stylesheet" href="./style.css?v=scrollbar-20261024" />
+  <link rel="stylesheet" href="./style.css?v=quiet-ui-20261024" />
 </head>
 <body>
   <div class="app-shell">
@@ -23,7 +23,7 @@
         <button class="nav-link" data-view="care"><span class="nav-icon">✳</span>自我关怀</button>
       </nav>
       <div class="sidebar-bottom">
-        <div class="privacy-card"><span class="lock">♧</span><div><b>只属于你的空间</b><p>记录保存在此设备中</p></div></div>
+        <div class="privacy-card"><span class="lock">♧</span><div><b>本机私密保存</b></div></div>
         <div class="side-footer">温柔一点，已经很好了。</div>
       </div>
     </aside>
@@ -36,7 +36,7 @@
       </header>
       <section class="view active" id="view-home">
         <div class="welcome-row">
-          <div class="welcome-copy"><p class="eyebrow">A LITTLE SPACE FOR YOU</p><h1>你好，<span>今天的你</span></h1><p class="subheading">不必急着变好，先听听自己此刻的声音。</p><div class="hero-actions"><button class="hero-cta" data-go="diary">写下此刻 <span>↗</span></button><button class="hero-ai-link" data-scroll-to="home-ai-review"><span class="hero-ai-symbol">✧</span><span>AI 温柔回顾<small>本地模拟 · 不上传</small></span><span class="hero-ai-arrow">↓</span></button></div></div>
+          <div class="welcome-copy"><div class="title-with-help"><h1>你好，<span>今天的你</span></h1><details class="help-tip"><summary aria-label="关于慢慢">?</summary><span class="help-copy" role="tooltip">给情绪一个落脚的地方。记录只保存在当前设备；回顾由本地规则模拟，不调用真实 AI。</span></details></div><div class="hero-actions"><button class="hero-cta" data-go="diary">写下此刻 <span>↗</span></button><button class="hero-ai-link" data-scroll-to="home-ai-review"><span class="hero-ai-symbol">✧</span><span>AI 温柔回顾<small>本地模拟 · 不上传</small></span><span class="hero-ai-arrow">↓</span></button></div></div>
           <img class="hero-illustration" src="./assets/morning-journal.png" alt="" aria-hidden="true" />
         </div>
         <div class="home-grid">
@@ -51,11 +51,11 @@
               <button class="mood-option" data-mood="烦躁"><span>🌬️</span><small>烦躁</small></button>
             </div>
             <div class="soft-divider"></div>
-            <div class="step-label">02 / 找找线索 <span class="optional">可多选 · 也可以跳过</span></div>
+            <div class="step-label">02 / 找找线索 <span class="optional">可选</span></div>
             <div class="trigger-options" role="group" aria-label="可能的情绪触发因素">
               <button class="chip" data-trigger="学习 / 工作">学习 / 工作</button><button class="chip" data-trigger="关系相处">关系相处</button><button class="chip" data-trigger="睡眠不足">睡眠不足</button><button class="chip" data-trigger="对自己的期待">对自己的期待</button><button class="chip" data-trigger="说不清的原因">说不清的原因</button>
             </div>
-            <label class="step-label note-label" for="entry-note">03 / 写给自己 <span class="optional">写一句也可以</span></label>
+            <label class="step-label note-label" for="entry-note">03 / 写给自己 <span class="optional">选填</span></label>
             <textarea id="entry-note" maxlength="500" placeholder="此刻发生了什么？身体有什么感觉？你希望自己听见什么……"></textarea>
             <div class="form-foot"><span id="char-count">0 / 500</span><button class="primary-button" id="save-entry">记下这一刻 <span>↗</span></button></div>
             <p class="save-message" id="save-message" aria-live="polite"></p>
@@ -70,64 +70,65 @@
 
             </section>
             <section class="card week-card">
-              <div class="card-heading"><div><span class="step-label">温柔观察</span><h2>这一周的心情</h2></div><button class="icon-button" data-go="insight" aria-label="查看情绪线索">↗</button></div>
+              <div class="card-heading"><div><span class="step-label">温柔观察</span><div class="title-with-help"><h2>这一周的心情</h2><details class="help-tip"><summary aria-label="关于一周心情">?</summary><span class="help-copy" role="tooltip">每天展示一条最近记录。空白只表示没有记录，不代表心情好坏。</span></details></div></div><button class="icon-button" data-go="insight" aria-label="查看情绪线索">↗</button></div>
               <div class="mood-week" id="mood-week"></div>
-              <div class="week-caption"><span class="legend-dot"></span> 每天只记录一次，也很棒</div>
             </section>
             <div class="note-card"><span>☼</span><p>情绪没有对错，<br/>它只是在告诉你：<em>有些事值得被照顾。</em></p></div>
           </div>
         </div>
         <section class="card ai-review-card" id="home-ai-review">
-          <div class="section-title-row"><div><span class="step-label">AI 温柔回顾</span><h2>把散落的感受，整理成一段可确认的观察</h2></div><span class="mock-badge"><i></i> 本地模拟 · 无真实 API</span></div>
-          <p class="section-intro">目前使用本地规则演示回顾流程，不会把你的文字发送到网络。真正接入模型前，会先征得你的同意。</p>
+          <div class="section-title-row"><div><span class="step-label">AI 温柔回顾</span><div class="title-with-help"><h2>把散落的感受，整理成一段可确认的观察</h2><details class="help-tip"><summary aria-label="关于本地回顾">?</summary><span class="help-copy" role="tooltip">仅用本机规则整理近 7 天记录，不会调用真实模型、上传内容或做心理诊断；你可以随时修正或忽略。</span></details></div></div><span class="mock-badge"><i></i> 本地模拟</span></div>
           <div class="review-toolbar"><span id="review-source">基于你最近 7 天的记录</span><div><button class="secondary-button" id="demo-review">体验示例</button><button class="primary-button" id="generate-review">回顾我的记录 <span>↗</span></button></div></div>
-          <div class="review-output" id="review-output" aria-live="polite"><div class="review-placeholder"><span>✳</span><p>当你准备好时，可以从一段回顾开始。<br/><small>这里会引用你自己写下或选择的内容，并邀请你确认是否贴近。</small></p></div></div>
+          <div class="review-output" id="review-output" aria-live="polite"><div class="review-placeholder"><span>✳</span><p>准备好时，开始一次本地回顾。</p></div></div>
           <div class="review-feedback" id="review-feedback" hidden><span>这段观察贴近你的感受吗？</span><button data-feedback="yes">贴近</button><button data-feedback="no">不太贴近</button></div>
-          <div class="review-footnote">演示模式不是心理评估或诊断。任何观察都可以由你修正，也可以忽略。</div>
+          <div class="review-footnote">本地模拟 · 非心理诊断</div>
         </section>
         <div class="bottom-note">慢慢来，也算在前进。 <span>✳</span></div>
       </section>
 
       <section class="view" id="view-diary">
-        <div class="page-heading"><p class="eyebrow">YOUR MOMENTS</p><h1>情绪日记</h1><p>不需要写得完整，真实就很好。</p><button class="primary-button" data-go="home">记录此刻 <span>↗</span></button></div>
+        <div class="page-heading"><div class="title-with-help"><h1>情绪日记</h1><details class="help-tip"><summary aria-label="关于情绪日记">?</summary><span class="help-copy" role="tooltip">不必写完整；心情、触发线索和一句话就足够。内容保存在此浏览器。</span></details></div><button class="primary-button" data-go="home">记录此刻 <span>↗</span></button></div>
         <div class="diary-list" id="diary-list"></div>
       </section>
 
       <section class="view" id="view-insight">
-        <div class="page-heading"><p class="eyebrow">NOTICE, WITHOUT JUDGING</p><h1>了解近期状态</h1><p>看见自己的感受与需要，不打分、不贴标签。所有结果只作自我观察参考。</p></div>
-        <div class="insight-grid"><section class="card insight-card"><span class="step-label">近 7 天</span><h2>情绪天气</h2><div id="insight-chart" class="insight-chart"></div><p class="quiet-hint">情绪起伏很自然，不需要追求每天都开心。</p></section><section class="card insight-card"><span class="step-label">常出现的线索</span><h2>最近，什么比较占心？</h2><div id="trigger-summary" class="trigger-summary"></div><p class="quiet-hint">触发因素不是你的错。看见它，是照顾自己的第一步。</p></section></div>
+        <div class="page-heading"><div class="title-with-help"><h1>情绪线索</h1><details class="help-tip"><summary aria-label="关于情绪线索">?</summary><span class="help-copy" role="tooltip">图表只呈现你记录过的日子；触发因素按出现次数整理，不判断对错，也不代表心理健康水平。</span></details></div></div>
+        <div class="insight-grid"><section class="card insight-card"><div class="title-with-help"><h2>情绪天气</h2><details class="help-tip"><summary aria-label="关于情绪天气">?</summary><span class="help-copy" role="tooltip">最近 7 天每天显示一条记录，空白表示当天没有记录。</span></details></div><div id="insight-chart" class="insight-chart"></div></section><section class="card insight-card"><div class="title-with-help"><h2>最近，什么比较占心？</h2><details class="help-tip"><summary aria-label="关于常见线索">?</summary><span class="help-copy" role="tooltip">根据你主动选择的触发因素统计，仅供自己回看。</span></details></div><div id="trigger-summary" class="trigger-summary"></div></section></div>
+        <section class="card trend-card"><div class="title-with-help"><h2>记录节奏</h2><details class="help-tip"><summary aria-label="关于记录节奏">?</summary><span class="help-copy" role="tooltip">只对比两周留下记录的天数，不评价心情好坏或心理健康水平。</span></details></div><div class="trend-summary" id="trend-summary"></div></section>
+        <section class="card weekly-review-card"><div class="section-title-row"><div class="title-with-help"><h2>本周回顾</h2><details class="help-tip"><summary aria-label="关于本周回顾">?</summary><span class="help-copy" role="tooltip">在本机汇总记录次数、常见心情与线索，以及你标记为有帮助的小事；不会上传。</span></details></div><button class="primary-button" id="make-weekly-review">生成回顾 <span>↗</span></button></div><div id="weekly-review-output" class="weekly-review-output" aria-live="polite">暂无本周回顾</div></section>
         <section class="card self-check-card">
-          <div class="section-title-row"><div><span class="step-label">自我观察 · 约 1 分钟</span><h2>最近一周，哪些方面需要多一点照顾？</h2></div><span class="safe-badge">非诊断自评</span></div>
-          <p class="section-intro">按你自己的感受选择即可。这里不计算心理健康分数，也不是医学量表。</p>
+          <div class="section-title-row"><div><span class="step-label">自我观察 · 约 1 分钟</span><div class="title-with-help"><h2>最近一周，哪些方面需要多一点照顾？</h2><details class="help-tip"><summary aria-label="关于自我观察">?</summary><span class="help-copy" role="tooltip">按自己的感受选择。这里只整理你想多照顾的方面，不计算心理健康分数，也不是医学量表。</span></details></div></div><span class="safe-badge">非诊断自评</span></div>
           <div class="self-check-list">
             <div class="self-check-item" data-question="sleep"><p><span>01</span> 我的睡眠能帮我恢复精力</p><div class="answer-options"><button data-value="0">很少</button><button data-value="1">有时</button><button data-value="2">大多数时候</button></div></div>
             <div class="self-check-item" data-question="daily"><p><span>02</span> 我能按自己的节奏完成日常事项</p><div class="answer-options"><button data-value="0">很少</button><button data-value="1">有时</button><button data-value="2">大多数时候</button></div></div>
             <div class="self-check-item" data-question="impact"><p><span>03</span> 压力对我的学习、工作或关系有明显影响</p><div class="answer-options"><button data-value="0">不明显</button><button data-value="1">有一些</button><button data-value="2">比较明显</button></div></div>
             <div class="self-check-item" data-question="support"><p><span>04</span> 难受时，我知道可以找谁聊一聊</p><div class="answer-options"><button data-value="0">暂时没有</button><button data-value="1">不确定</button><button data-value="2">知道</button></div></div>
           </div>
-          <div class="self-check-footer"><span>仅在当前页面本地计算，不保存、不上传。</span><button class="primary-button" id="self-check-submit">看看我的观察 <span>↗</span></button></div>
+          <div class="self-check-footer"><span>本地计算 · 不保存</span><button class="primary-button" id="self-check-submit">看看我的观察 <span>↗</span></button></div>
           <div class="self-check-result" id="self-check-result" aria-live="polite" hidden></div>
         </section>
 
-        <div class="reflection-card"><span>✳</span><div><b>一个温柔的问题</b><p>如果朋友正经历和你一样的事，你会对 TA 说些什么？</p></div></div>
+        <div class="reflection-card"><span>✳</span><div><b>给自己的一句话</b><label for="kindness-note">如果朋友正经历和你一样的事，你会对 TA 说些什么？</label><textarea id="kindness-note" maxlength="240" placeholder="也试着把这句话说给自己听……"></textarea><button class="secondary-button" id="save-kindness-note">留给自己</button><span id="kindness-saved" aria-live="polite"></span></div></div>
       </section>
 
       <section class="view" id="view-care">
-        <div class="page-heading"><p class="eyebrow">SMALL THINGS THAT HELP</p><h1>自我关怀</h1><p>挑一个现在做得到的小动作。照顾自己，不需要等到“有空”。</p></div>
+        <div class="page-heading"><div class="title-with-help"><h1>自我关怀</h1><details class="help-tip"><summary aria-label="关于自我关怀">?</summary><span class="help-copy" role="tooltip">挑一个现在做得到的小动作。做过后可以标记“有帮助”，慢慢积累自己的有效清单。</span></details></div></div>
         <div class="care-grid">
-          <article class="care-card breath-card"><div class="care-icon">◉</div><span class="step-label">01 / 60 秒</span><h2>跟着呼吸，回到此刻</h2><p>慢慢吸气，再缓缓呼出。不需要刻意改变，只是陪着这一口气。</p><button class="outline-button" id="breath-start">开始一分钟 <span>→</span></button><div class="breath-visual" id="breath-visual"><span></span></div><div class="breath-caption" id="breath-caption"></div></article>
-          <article class="care-card move-card"><div class="care-icon">⌁</div><span class="step-label">02 / 轻轻活动</span><h2>给身体一点空间</h2><p>选一个简单动作，做两分钟就好。可以随时停下来。</p><div class="activity-list"><button class="activity" data-activity="散步两分钟"><span>🚶</span><span><b>慢慢走一走</b><small>看看窗外，松松肩膀</small></span><span>＋</span></button><button class="activity" data-activity="伸展肩颈"><span>🌱</span><span><b>伸展肩颈</b><small>轻轻转动，不必做到极限</small></span><span>＋</span></button><button class="activity" data-activity="喝一杯水"><span>💧</span><span><b>喝一杯水</b><small>感受温度，给自己一点停顿</small></span><span>＋</span></button></div></article>
-          <article class="care-card sound-card"><div class="care-icon">♫</div><span class="step-label">03 / 安静片刻</span><h2>给耳朵一点留白</h2><p>闭上眼睛，听听身边的声音：风扇、鸟鸣，或者自己的呼吸。</p><button class="outline-button" id="sound-start">开始 30 秒聆听 <span>→</span></button><div class="sound-feedback" id="sound-feedback"></div></article>
+          <article class="care-card breath-card"><div class="care-icon">◉</div><span class="step-label">01 / 60 秒</span><div class="title-with-help"><h2>跟着呼吸，回到此刻</h2><details class="help-tip"><summary aria-label="呼吸练习说明">?</summary><span class="help-copy" role="tooltip">只需留意自然的呼吸；若感到不舒服，随时结束。</span></details></div><button class="outline-button" id="breath-start">开始一分钟 <span>→</span></button><button class="save-care-button" data-helpful-action="一分钟呼吸">♡ 有帮助</button><div class="breath-visual" id="breath-visual"><span></span></div><div class="breath-caption" id="breath-caption"></div></article>
+          <article class="care-card move-card"><div class="care-icon">⌁</div><span class="step-label">02 / 轻轻活动</span><div class="title-with-help"><h2>给身体一点空间</h2><details class="help-tip"><summary aria-label="轻轻活动说明">?</summary><span class="help-copy" role="tooltip">从舒服的幅度开始；任何动作都可以暂停或跳过。</span></details></div><div class="activity-list"><button class="activity" data-activity="散步两分钟"><span>🚶</span><span><b>慢慢走一走</b></span><span>→</span></button><button class="activity" data-activity="伸展肩颈"><span>🌱</span><span><b>伸展肩颈</b></span><span>→</span></button><button class="activity" data-activity="喝一杯水"><span>💧</span><span><b>喝一杯水</b></span><span>→</span></button></div><div class="activity-save-row"><button class="save-care-button" data-helpful-action="慢慢走一走">♡ 散步有帮助</button><button class="save-care-button" data-helpful-action="伸展肩颈">♡ 伸展有帮助</button><button class="save-care-button" data-helpful-action="喝一杯水">♡ 喝水有帮助</button></div></article>
+          <article class="care-card sound-card"><div class="care-icon">♫</div><span class="step-label">03 / 安静片刻</span><div class="title-with-help"><h2>给耳朵一点留白</h2><details class="help-tip"><summary aria-label="聆听练习说明">?</summary><span class="help-copy" role="tooltip">可以听环境里的声音，不需要播放音乐。闭眼不舒服时保持睁眼即可。</span></details></div><button class="outline-button" id="sound-start">开始 30 秒聆听 <span>→</span></button><button class="save-care-button" data-helpful-action="30 秒聆听">♡ 有帮助</button><div class="sound-feedback" id="sound-feedback"></div></article>
+          <article class="care-card grounding-card"><div class="care-icon">✳</div><span class="step-label">04 / 感官锚点</span><div class="title-with-help"><h2>回到周围这一刻</h2><details class="help-tip"><summary aria-label="感官锚点说明">?</summary><span class="help-copy" role="tooltip">按自己的节奏观察周围；不舒服时可以结束，或只做其中一步。</span></details></div><div class="grounding-panel" id="grounding-panel" aria-live="polite"><p id="grounding-cue">用眼睛找出 5 样你看见的东西。</p><span id="grounding-progress">准备好就开始</span></div><button class="outline-button" id="grounding-next">开始练习 <span>→</span></button><button class="save-care-button" data-helpful-action="感官锚点">♡ 有帮助</button></article>
         </div>
-        <div class="care-footer"><span>☼</span><p>今天做不到也没关系。你不需要靠“表现好”来证明自己值得被照顾。</p></div>
+        <section class="card helpful-list-card"><div class="title-with-help"><h2>对我有效的小事</h2><details class="help-tip"><summary aria-label="关于有效小事">?</summary><span class="help-copy" role="tooltip">点选“有帮助”后会保存在此设备。你可以随时移除；它是个人经验，不是普遍建议。</span></details></div><div id="helpful-care-list" class="helpful-care-list"></div></section>
+        <div class="care-footer"><span>☼</span><p>做不到也没关系。你值得被照顾。</p></div>
       </section>
 
-      <footer class="disclaimer">慢慢是一个自我关怀练习工具。近期自评与本地模拟回顾只作自我观察，不代表诊断或治疗建议。若困扰持续或明显影响生活，可考虑联系可信赖的人或专业支持。</footer>
+      <footer class="disclaimer"><span>本地自我观察 · 非诊断或治疗建议</span><details class="help-tip"><summary aria-label="关于专业支持">?</summary><span class="help-copy" role="tooltip">若困扰持续或明显影响生活，可以联系可信赖的人或专业支持。</span></details></footer>
     </main>
     <nav class="mobile-nav" aria-label="移动端导航"><button class="active" data-view="home"><span>◷</span>今日</button><button data-view="diary"><span>▤</span>日记</button><button data-view="insight"><span>⌁</span>线索</button><button data-view="care"><span>✳</span>关怀</button></nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <dialog id="privacy-dialog"><button class="dialog-close" aria-label="关闭">×</button><div class="dialog-mark">♧</div><p class="eyebrow">YOUR PRIVACY, YOUR CHOICE</p><h2>你的心事，留在你的设备</h2><p>日记保存在当前浏览器的本地存储中，不会上传到服务器。本版的自评与模拟回顾也只在当前页面本地运行，不会调用或连接大模型 API。清除浏览器数据或更换设备后，日记可能无法恢复。请避免在共享设备上记录敏感信息。</p><button class="primary-button dialog-ok">知道了</button></dialog>
-  <script src="./app.js?v=2045d16"></script>
+  <dialog id="privacy-dialog"><button class="dialog-close" aria-label="关闭">×</button><div class="dialog-mark">♧</div><p class="eyebrow">YOUR PRIVACY, YOUR CHOICE</p><h2>你的心事，留在你的设备</h2><p>日记与有效小事保存在当前浏览器，不会上传。本版不调用大模型 API。清除浏览器数据或更换设备后，内容可能无法恢复；避免在共享设备记录敏感信息。</p><div class="privacy-actions"><button class="secondary-button" id="export-data">导出我的数据</button><button class="danger-button" id="clear-data">删除本机记录</button></div><button class="primary-button dialog-ok">知道了</button></dialog>
+  <script src="./app.js?v=quiet-ui-20261024"></script>
 </body>
 </html>

@@ -37,3 +37,96 @@ html{scrollbar-color:#b8cbbd transparent;scrollbar-width:thin}
 ::-webkit-scrollbar-thumb{background:#b8cbbd;background-clip:padding-box;border:3px solid transparent;border-radius:999px}
 ::-webkit-scrollbar-thumb:hover{background:#789786;background-clip:padding-box}
 ::-webkit-scrollbar-corner{background:transparent}
+
+/* Keep explanations tucked beside their headings until requested. */
+.title-with-help{display:flex;align-items:center;gap:9px;position:relative;min-width:0}
+.title-with-help h1,.title-with-help h2{margin-top:0}
+.welcome-row .title-with-help h1{margin:0}
+.help-tip{position:relative;z-index:8;flex:none;font-size:initial}
+.help-tip summary{list-style:none;display:grid;place-items:center;width:22px;height:22px;border:1px solid #c6d8ca;border-radius:50%;background:#f7fbf7;color:#537565;font:600 12px/1 ui-sans-serif,system-ui,"Microsoft YaHei",sans-serif;cursor:pointer;transition:background .18s,border-color .18s}
+.help-tip summary::-webkit-details-marker{display:none}
+.help-tip summary:hover,.help-tip[open] summary,.help-tip:focus-within summary{background:#dcece2;border-color:#92b49c}
+.help-copy{position:absolute;top:calc(100% + 9px);left:0;width:min(300px,calc(100vw - 48px));padding:12px 14px;border:1px solid #d8e5da;border-radius:12px;background:#fffefa;color:#435b50;box-shadow:0 12px 30px #2e4c4720;font-size:12px;line-height:1.8;font-weight:450;letter-spacing:0;visibility:hidden;opacity:0;transform:translateY(-3px);transition:opacity .16s,transform .16s,visibility .16s;pointer-events:none}
+.help-tip[open] .help-copy,.help-tip:hover .help-copy,.help-tip:focus-within .help-copy{visibility:visible;opacity:1;transform:translateY(0)}
+.welcome-row .help-tip summary{width:24px;height:24px;background:#ffffffad}
+.page-heading .title-with-help h1{font-size:32px}
+.week-card .title-with-help{margin-top:8px}
+.week-card .title-with-help h2{font-size:14px;margin:0}
+.ai-review-card .title-with-help h2{font-size:18px;line-height:1.55}
+.ai-review-card .review-placeholder{min-height:72px;color:#60766a;font-size:13px}
+.review-placeholder p{font-size:13px}
+.review-footnote{font-size:11px}
+.insight-card .title-with-help{margin-bottom:18px}
+.insight-card .title-with-help h2{font-size:18px;margin:0}
+.insight-chart{margin-top:8px}
+.trend-card,.weekly-review-card,.helpful-list-card{margin-top:18px;padding:22px 25px;border:1px solid #e1e9e2;border-radius:20px;background:#fffefa;box-shadow:0 12px 36px rgba(46,76,71,.05)}
+.trend-card .title-with-help h2,.weekly-review-card h2,.helpful-list-card h2{font-size:17px;color:#304b43;margin:0}
+.trend-summary{margin-top:12px;padding:14px 16px;border-radius:12px;background:#f1f6f1;color:#506b5d;font-size:13px;line-height:1.8}
+.weekly-review-card .section-title-row{align-items:center}
+.weekly-review-card .weekly-review-output{margin-top:17px;color:#61766a;font-size:13px;line-height:1.8}
+.weekly-review-output>p{margin:14px 0 0}
+.weekly-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.weekly-review-grid>div{display:grid;gap:4px;padding:13px 14px;border-radius:12px;background:#f3f7f2}
+.weekly-review-grid strong{font-size:15px;color:#36584b}
+.weekly-review-grid span{font-size:11px;color:#77897d}
+.self-check-card .section-intro{display:none}
+.care-card{overflow:visible}
+.care-card .title-with-help{margin:10px 0 14px}
+.care-card .title-with-help h2{font-size:17px;margin:0}
+.care-card .help-copy{font-weight:450}
+.save-care-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:11px 7px 0 0;padding:7px 10px;border:1px solid #d5e3d8;border-radius:18px;background:#f7faf6;color:#557464;font:inherit;font-size:11px;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.save-care-button:hover,.save-care-button.saved{background:#e3f0e6;border-color:#a8c7af;color:#365e4d}
+.save-care-button:active{transform:scale(.97)}
+.activity-list{margin-top:8px}
+.activity>span:last-child{font-size:14px}
+.activity-save-row{display:flex;flex-wrap:wrap;gap:2px;margin-top:5px}
+.activity-save-row .save-care-button{margin-top:7px}
+.grounding-panel{min-height:84px;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:13px 14px;border-radius:12px;background:#f1f6f1;color:#506c5e}
+.grounding-panel p{margin:0;font-size:13px;line-height:1.7}
+.grounding-panel span{font-size:11px;color:#829286}
+.helpful-list-card .title-with-help{margin-bottom:15px}
+.helpful-care-list{display:flex;flex-wrap:wrap;gap:8px}
+.helpful-empty{font-size:12px;color:#89978b}
+.helpful-care-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid #e1ebe2;border-radius:12px;background:#f8faf7;color:#597265;font-size:12px}
+.helpful-care-item>span{color:#789881}
+.helpful-care-item small{color:#88968b}
+.helpful-care-item button{border:0;background:transparent;color:#98a59a;font-size:16px;cursor:pointer}
+.reflection-card{align-items:flex-start}
+.reflection-card>div{flex:1;min-width:0}
+.reflection-card label{display:block;margin:7px 0;font-size:12px;color:#667a6d}
+.reflection-card textarea{display:block;width:100%;min-height:62px;resize:vertical;border:1px solid #dce7dc;border-radius:10px;padding:10px 12px;background:#fbfcf9;color:#385348;font:inherit;font-size:13px;outline:none}
+.reflection-card textarea:focus{border-color:#8fb29a;box-shadow:0 0 0 3px #cbeddf66}
+#kindness-saved{margin-left:9px;color:#66836f;font-size:11px}
+.disclaimer{display:flex;align-items:center;justify-content:center;gap:8px}
+.disclaimer .help-tip{display:inline-block;vertical-align:middle}
+.disclaimer .help-copy{top:auto;bottom:calc(100% + 8px);left:50%;transform:translate(-50%,3px)}
+.disclaimer .help-tip[open] .help-copy,.disclaimer .help-tip:hover .help-copy,.disclaimer .help-tip:focus-within .help-copy{transform:translate(-50%,0)}
+.privacy-actions{display:flex;gap:9px;margin:18px 0 4px}
+.privacy-actions>*{flex:1}
+.danger-button{border:1px solid #ead5d0;border-radius:9px;background:#fff9f7;color:#946c63;padding:10px 12px;font:inherit;font-size:12px;cursor:pointer}
+.danger-button:hover{background:#fbefec}
+.grounding-card{grid-column:1 / -1;min-height:210px;display:grid;grid-template-columns:38px minmax(200px,1fr) minmax(260px,.9fr);grid-template-rows:auto auto auto auto;grid-template-areas:"icon label panel" "title title panel" "next next panel" "save save panel";column-gap:14px;align-content:center;align-items:center}
+.grounding-card>.care-icon{grid-area:icon;margin:0}
+.grounding-card>.step-label{grid-area:label}
+.grounding-card>.title-with-help{grid-area:title;margin:10px 0}
+.grounding-card>.grounding-panel{grid-area:panel}
+.grounding-card>#grounding-next{grid-area:next;justify-self:start;margin-top:0}
+.grounding-card>[data-helpful-action]{grid-area:save;justify-self:start;margin:0}
+.care-grid{align-items:start}
+.activity small{display:none}
+.care-card:not(.move-card):not(.grounding-card){min-height:270px}
+@media(max-width:760px){
+  .page-heading .title-with-help h1{font-size:27px}
+  .ai-review-card .title-with-help h2{font-size:15px}
+  .trend-card,.weekly-review-card,.helpful-list-card{padding:19px 17px;border-radius:17px}
+  .weekly-review-card .section-title-row{align-items:flex-start;flex-direction:column}
+  .weekly-review-grid{grid-template-columns:1fr;gap:7px}
+  .weekly-review-grid>div{grid-template-columns:auto 1fr;align-items:baseline;gap:10px;padding:10px 12px}
+  .care-card .help-copy{left:auto;right:0;width:min(280px,calc(100vw - 56px))}
+  .grounding-card{display:block;min-height:260px}
+  .grounding-card>.care-icon{margin:0 0 14px}
+  .grounding-card>.step-label{display:block}
+  .grounding-card>.grounding-panel{margin-bottom:9px}
+  .disclaimer{align-items:center;text-align:center;font-size:10px}
+  .privacy-actions{flex-direction:column}
+}
