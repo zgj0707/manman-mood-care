@@ -130,3 +130,11 @@ html{scrollbar-color:#b8cbbd transparent;scrollbar-width:thin}
   .disclaimer{align-items:center;text-align:center;font-size:10px}
   .privacy-actions{flex-direction:column}
 }
+
+/* Readable Chinese typography: self-hosted Noto Sans SC for interface, author-approved LXGW WenKai web font for expressive headings. */
+@font-face{font-family:"Noto Sans SC";font-style:normal;font-weight:400;font-display:swap;src:url("./assets/fonts/noto-sans-sc-regular.woff2") format("woff2");}
+:root{font-family:"Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;}
+body,button,textarea,input,select{font-family:inherit;}
+h1,h2,h3,.brand{font-family:"LXGW WenKai","Noto Sans SC","Microsoft YaHei",sans-serif;letter-spacing:.025em;}
+.brand small,.step-label,.eyebrow,.side-label,.date-line,.help-tip summary,.help-copy,.nav-link,.chip,.mood-option small,.form-foot,.entry-time,.entry-tags,.week-day small,.review-footnote{font-family:"Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;}
+.gentle-card>p,.note-card em,.bottom-note,.welcome-row h1 span{font-family:"LXGW WenKai","Noto Sans SC","Microsoft YaHei",sans-serif;letter-spacing:.025em;}

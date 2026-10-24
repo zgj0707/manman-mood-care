@@ -14,3 +14,9 @@
 ## 更新与发布
 
 此仓库通过 GitHub Pages Actions 发布。更新页面文件并推送到 `main` 后，线上页面会自动更新，项目站点 URL 保持不变。
+
+## 字体
+
+- 正文使用 Noto Sans SC（思源黑体体系），仅包含页面现有静态界面字符的 WOFF2 子集，随站点托管；用户新写入的内容由该子集缺失时回退到系统中文字体。字体遵循 SIL Open Font License 1.1，许可文本见 assets/fonts/OFL-Noto-Sans-SC.txt。
+- 标题使用霞鹜文楷，通过作者认可的 ZeoSeven Fonts 网页字体服务加载；遵循 SIL Open Font License 1.1。
+
