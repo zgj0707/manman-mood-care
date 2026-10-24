@@ -86,8 +86,28 @@
       </section>
 
       <section class="view" id="view-insight">
-        <div class="page-heading"><p class="eyebrow">NOTICE, WITHOUT JUDGING</p><h1>情绪线索</h1><p>这些只是观察，不是结论。你比任何图表都更了解自己。</p></div>
+        <div class="page-heading"><p class="eyebrow">NOTICE, WITHOUT JUDGING</p><h1>了解近期状态</h1><p>看见自己的感受与需要，不打分、不贴标签。所有结果只作自我观察参考。</p></div>
         <div class="insight-grid"><section class="card insight-card"><span class="step-label">近 7 天</span><h2>情绪天气</h2><div id="insight-chart" class="insight-chart"></div><p class="quiet-hint">情绪起伏很自然，不需要追求每天都开心。</p></section><section class="card insight-card"><span class="step-label">常出现的线索</span><h2>最近，什么比较占心？</h2><div id="trigger-summary" class="trigger-summary"></div><p class="quiet-hint">触发因素不是你的错。看见它，是照顾自己的第一步。</p></section></div>
+        <section class="card self-check-card">
+          <div class="section-title-row"><div><span class="step-label">自我观察 · 约 1 分钟</span><h2>最近一周，哪些方面需要多一点照顾？</h2></div><span class="safe-badge">非诊断自评</span></div>
+          <p class="section-intro">按你自己的感受选择即可。这里不计算心理健康分数，也不是医学量表。</p>
+          <div class="self-check-list">
+            <div class="self-check-item" data-question="sleep"><p><span>01</span> 我的睡眠能帮我恢复精力</p><div class="answer-options"><button data-value="0">很少</button><button data-value="1">有时</button><button data-value="2">大多数时候</button></div></div>
+            <div class="self-check-item" data-question="daily"><p><span>02</span> 我能按自己的节奏完成日常事项</p><div class="answer-options"><button data-value="0">很少</button><button data-value="1">有时</button><button data-value="2">大多数时候</button></div></div>
+            <div class="self-check-item" data-question="impact"><p><span>03</span> 压力对我的学习、工作或关系有明显影响</p><div class="answer-options"><button data-value="0">不明显</button><button data-value="1">有一些</button><button data-value="2">比较明显</button></div></div>
+            <div class="self-check-item" data-question="support"><p><span>04</span> 难受时，我知道可以找谁聊一聊</p><div class="answer-options"><button data-value="0">暂时没有</button><button data-value="1">不确定</button><button data-value="2">知道</button></div></div>
+          </div>
+          <div class="self-check-footer"><span>仅在当前页面本地计算，不保存、不上传。</span><button class="primary-button" id="self-check-submit">看看我的观察 <span>↗</span></button></div>
+          <div class="self-check-result" id="self-check-result" aria-live="polite" hidden></div>
+        </section>
+        <section class="card ai-review-card">
+          <div class="section-title-row"><div><span class="step-label">AI 温柔回顾</span><h2>把散落的感受，整理成一段可确认的观察</h2></div><span class="mock-badge"><i></i> 本地模拟 · 无真实 API</span></div>
+          <p class="section-intro">目前使用本地规则演示回顾流程，不会把你的文字发送到网络。真正接入模型前，会先征得你的同意。</p>
+          <div class="review-toolbar"><span id="review-source">基于你最近 7 天的记录</span><div><button class="secondary-button" id="demo-review">体验示例</button><button class="primary-button" id="generate-review">回顾我的记录 <span>↗</span></button></div></div>
+          <div class="review-output" id="review-output" aria-live="polite"><div class="review-placeholder"><span>✳</span><p>当你准备好时，可以从一段回顾开始。<br/><small>这里会引用你自己写下或选择的内容，并邀请你确认是否贴近。</small></p></div></div>
+          <div class="review-feedback" id="review-feedback" hidden><span>这段观察贴近你的感受吗？</span><button data-feedback="yes">贴近</button><button data-feedback="no">不太贴近</button></div>
+          <div class="review-footnote">演示模式不是心理评估或诊断。任何观察都可以由你修正，也可以忽略。</div>
+        </section>
         <div class="reflection-card"><span>✳</span><div><b>一个温柔的问题</b><p>如果朋友正经历和你一样的事，你会对 TA 说些什么？</p></div></div>
       </section>
 
@@ -101,12 +121,12 @@
         <div class="care-footer"><span>☼</span><p>今天做不到也没关系。你不需要靠“表现好”来证明自己值得被照顾。</p></div>
       </section>
 
-      <footer class="disclaimer">慢慢是一个自我关怀练习工具，不提供诊断或治疗建议。若困扰持续影响生活，可考虑联系可信赖的人或专业支持。</footer>
+      <footer class="disclaimer">慢慢是一个自我关怀练习工具。近期自评与本地模拟回顾只作自我观察，不代表诊断或治疗建议。若困扰持续或明显影响生活，可考虑联系可信赖的人或专业支持。</footer>
     </main>
     <nav class="mobile-nav" aria-label="移动端导航"><button class="active" data-view="home"><span>◷</span>今日</button><button data-view="diary"><span>▤</span>日记</button><button data-view="insight"><span>⌁</span>线索</button><button data-view="care"><span>✳</span>关怀</button></nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <dialog id="privacy-dialog"><button class="dialog-close" aria-label="关闭">×</button><div class="dialog-mark">♧</div><p class="eyebrow">YOUR PRIVACY, YOUR CHOICE</p><h2>你的心事，留在你的设备</h2><p>这个雏形将日记保存在当前浏览器的本地存储中，不会上传到服务器。清除浏览器数据或更换设备后，记录可能无法恢复。请避免在共享设备上记录敏感信息。</p><button class="primary-button dialog-ok">知道了</button></dialog>
+  <dialog id="privacy-dialog"><button class="dialog-close" aria-label="关闭">×</button><div class="dialog-mark">♧</div><p class="eyebrow">YOUR PRIVACY, YOUR CHOICE</p><h2>你的心事，留在你的设备</h2><p>日记保存在当前浏览器的本地存储中，不会上传到服务器。本版的自评与模拟回顾也只在当前页面本地运行，不会调用或连接大模型 API。清除浏览器数据或更换设备后，日记可能无法恢复。请避免在共享设备上记录敏感信息。</p><button class="primary-button dialog-ok">知道了</button></dialog>
   <script src="./app.js"></script>
 </body>
 </html>
