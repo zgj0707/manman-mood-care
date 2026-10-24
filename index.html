@@ -36,7 +36,7 @@
       </header>
       <section class="view active" id="view-home">
         <div class="welcome-row">
-          <div class="welcome-copy"><p class="eyebrow">A LITTLE SPACE FOR YOU</p><h1>你好，<span>今天的你</span></h1><p class="subheading">不必急着变好，先听听自己此刻的声音。</p><button class="hero-cta" data-go="diary">写下此刻 <span>↗</span></button></div>
+          <div class="welcome-copy"><p class="eyebrow">A LITTLE SPACE FOR YOU</p><h1>你好，<span>今天的你</span></h1><p class="subheading">不必急着变好，先听听自己此刻的声音。</p><div class="hero-actions"><button class="hero-cta" data-go="diary">写下此刻 <span>↗</span></button><button class="hero-ai-link" data-scroll-to="home-ai-review"><span class="hero-ai-symbol">✧</span><span>AI 温柔回顾<small>本地模拟 · 不上传</small></span><span class="hero-ai-arrow">↓</span></button></div></div>
           <img class="hero-illustration" src="./assets/morning-journal.png" alt="" aria-hidden="true" />
         </div>
         <div class="home-grid">
@@ -67,7 +67,7 @@
               <h2 id="gentle-title">先不用解决所有事。</h2>
               <p id="gentle-copy">感受一下双脚碰到地面的感觉。你正在这里，已经是一个开始。</p>
               <button class="text-button" data-go="care">试试一个小练习 <span>→</span></button>
-              <img class="care-illustration" src="./assets/morning-journal.png" alt="" aria-hidden="true" />
+
             </section>
             <section class="card week-card">
               <div class="card-heading"><div><span class="step-label">温柔观察</span><h2>这一周的心情</h2></div><button class="icon-button" data-go="insight" aria-label="查看情绪线索">↗</button></div>
@@ -77,6 +77,14 @@
             <div class="note-card"><span>☼</span><p>情绪没有对错，<br/>它只是在告诉你：<em>有些事值得被照顾。</em></p></div>
           </div>
         </div>
+        <section class="card ai-review-card" id="home-ai-review">
+          <div class="section-title-row"><div><span class="step-label">AI 温柔回顾</span><h2>把散落的感受，整理成一段可确认的观察</h2></div><span class="mock-badge"><i></i> 本地模拟 · 无真实 API</span></div>
+          <p class="section-intro">目前使用本地规则演示回顾流程，不会把你的文字发送到网络。真正接入模型前，会先征得你的同意。</p>
+          <div class="review-toolbar"><span id="review-source">基于你最近 7 天的记录</span><div><button class="secondary-button" id="demo-review">体验示例</button><button class="primary-button" id="generate-review">回顾我的记录 <span>↗</span></button></div></div>
+          <div class="review-output" id="review-output" aria-live="polite"><div class="review-placeholder"><span>✳</span><p>当你准备好时，可以从一段回顾开始。<br/><small>这里会引用你自己写下或选择的内容，并邀请你确认是否贴近。</small></p></div></div>
+          <div class="review-feedback" id="review-feedback" hidden><span>这段观察贴近你的感受吗？</span><button data-feedback="yes">贴近</button><button data-feedback="no">不太贴近</button></div>
+          <div class="review-footnote">演示模式不是心理评估或诊断。任何观察都可以由你修正，也可以忽略。</div>
+        </section>
         <div class="bottom-note">慢慢来，也算在前进。 <span>✳</span></div>
       </section>
 
@@ -100,14 +108,7 @@
           <div class="self-check-footer"><span>仅在当前页面本地计算，不保存、不上传。</span><button class="primary-button" id="self-check-submit">看看我的观察 <span>↗</span></button></div>
           <div class="self-check-result" id="self-check-result" aria-live="polite" hidden></div>
         </section>
-        <section class="card ai-review-card">
-          <div class="section-title-row"><div><span class="step-label">AI 温柔回顾</span><h2>把散落的感受，整理成一段可确认的观察</h2></div><span class="mock-badge"><i></i> 本地模拟 · 无真实 API</span></div>
-          <p class="section-intro">目前使用本地规则演示回顾流程，不会把你的文字发送到网络。真正接入模型前，会先征得你的同意。</p>
-          <div class="review-toolbar"><span id="review-source">基于你最近 7 天的记录</span><div><button class="secondary-button" id="demo-review">体验示例</button><button class="primary-button" id="generate-review">回顾我的记录 <span>↗</span></button></div></div>
-          <div class="review-output" id="review-output" aria-live="polite"><div class="review-placeholder"><span>✳</span><p>当你准备好时，可以从一段回顾开始。<br/><small>这里会引用你自己写下或选择的内容，并邀请你确认是否贴近。</small></p></div></div>
-          <div class="review-feedback" id="review-feedback" hidden><span>这段观察贴近你的感受吗？</span><button data-feedback="yes">贴近</button><button data-feedback="no">不太贴近</button></div>
-          <div class="review-footnote">演示模式不是心理评估或诊断。任何观察都可以由你修正，也可以忽略。</div>
-        </section>
+
         <div class="reflection-card"><span>✳</span><div><b>一个温柔的问题</b><p>如果朋友正经历和你一样的事，你会对 TA 说些什么？</p></div></div>
       </section>
 

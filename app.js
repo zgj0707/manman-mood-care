@@ -32,6 +32,7 @@ function activateView(name) {
 }
 document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => activateView(b.dataset.view)));
 document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => activateView(b.dataset.go)));
+document.querySelectorAll('[data-scroll-to]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.scrollTo)?.scrollIntoView({behavior:'smooth', block:'start'})));
 document.querySelector('#today-date').textContent = formatDate(new Date());
 
 document.querySelectorAll('.mood-option').forEach(button => button.addEventListener('click', () => {
